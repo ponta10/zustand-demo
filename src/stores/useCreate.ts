@@ -1,11 +1,17 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-type State = {
-  posts: any[];
+
+interface Post {
+    title: string;
+    body: string;
+}
+
+interface State {
+  posts: Post[];
   getPosts: () => void;
-  selectedPost: any | null;
-  selectPost: (post: any) => void;
+  selectedPost: Post | null;
+  selectPost: (post: Post) => void;
 };
 
 const useStore = create<State>()(

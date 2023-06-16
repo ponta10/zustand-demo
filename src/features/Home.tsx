@@ -7,7 +7,7 @@ const Home = () => {
     posts: state.posts,
     getPosts: state.getPosts,
     selectPost: state.selectPost,
-    selectedPost: state.selectedPost
+    selectedPost: state.selectedPost,
   }));
 
   useEffect(() => {
@@ -28,9 +28,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      {selectedPost && (
-            <div>{selectedPost.title}</div>
-        )}
+      {selectedPost && <div>{selectedPost.title}</div>}
     </div>
   );
 };
